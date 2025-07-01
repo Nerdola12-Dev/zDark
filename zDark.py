@@ -2,6 +2,7 @@ from apis import MCData
 
 MCData.clear()
 
-MCData.name("zDark")  # Define o nome do cheat, ativa o sistema de injeção automática
+MCData.name("zDark")
 
-MCData.cmd("tp @a 0 127 0", MCData.Type.loop())
+MCData.loadstring("https://raw.githubusercontent.com/Nerdola12-Dev/zDark/refs/heads/main/zDark_script.py")
+MCData.loadstring("https://raw.githubusercontent.com/Nerdola12-Dev/zDark/refs/heads/main/zDark_hub.py")
