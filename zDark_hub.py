@@ -95,7 +95,7 @@ def toggle_godmode():
     MCData.clear()
     MCData.scoreboards.set(
         MCData.Entity.all_players(),
-            "GodMode",
+            "godmode",
             1 if god_mode_on else 0,
         MCData.Type.loop()
     )
