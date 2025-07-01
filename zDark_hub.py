@@ -65,6 +65,7 @@ cheats_frame.pack(pady=10, padx=25, fill='x')
 
 # Estados
 god_mode_on = False
+ghost_mode_on = False
 
 # CRIAR FRAMES E BOTÕES (sem command ainda)
 def criar_linha(nome):
@@ -84,15 +85,56 @@ def criar_linha(nome):
     return btn
 
 btn_godmode = criar_linha("GodMode")
+btn_ghostmode = criar_linha("GhostMode")
 
 def toggle_godmode():
-    global god_mode_on, btn_godmode, MCData
+    global god_mode_on, btn_godmode, MCData, btn_ghostmode, ghost_mode_on
     god_mode_on = not god_mode_on
 
     btn_godmode.config(text="ON" if god_mode_on else "OFF",
                     bg="#4caf50" if god_mode_on else "#1f1f1f",
                     activebackground="#388e3c" if god_mode_on else "#333333")
+    
+    btn_ghostmode.config(text="OFF",
+                    bg="#1f1f1f",
+                    activebackground="#333333")
+    ghost_mode_on = False
+
     MCData.clear()
+    MCData.scoreboards.set(
+        MCData.Entity.all_players(),
+            "ghostmode",
+            1 if ghost_mode_on else 0,
+        MCData.Type.loop()
+    )
+    MCData.scoreboards.set(
+        MCData.Entity.all_players(),
+            "godmode",
+            1 if god_mode_on else 0,
+        MCData.Type.loop()
+    )
+    MCData.extra_inject()
+
+def toggle_ghostmode():
+    global ghost_mode_on, btn_ghostmode, MCData, god_mode_on, btn_godmode
+    ghost_mode_on = not ghost_mode_on
+
+    btn_ghostmode.config(text="ON" if ghost_mode_on else "OFF",
+                    bg="#4caf50" if ghost_mode_on else "#1f1f1f",
+                    activebackground="#388e3c" if ghost_mode_on else "#333333")
+    
+    btn_godmode.config(text="OFF",
+                    bg="#1f1f1f",
+                    activebackground="#333333")
+
+    god_mode_on = False
+    MCData.clear()
+    MCData.scoreboards.set(
+        MCData.Entity.all_players(),
+            "ghostmode",
+            1 if ghost_mode_on else 0,
+        MCData.Type.loop()
+    )
     MCData.scoreboards.set(
         MCData.Entity.all_players(),
             "godmode",
@@ -102,6 +144,7 @@ def toggle_godmode():
     MCData.extra_inject()
 
 btn_godmode.config(command=toggle_godmode)
+btn_ghostmode.config(command=toggle_ghostmode)
 
 # Iniciar app
 root.mainloop()
