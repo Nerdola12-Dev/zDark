@@ -8,10 +8,9 @@ To run it, simply use the following script:
 
     loadstring("https://raw.githubusercontent.com/Nerdola12-Dev/zDark/refs/heads/main/zDark.py")
 
-Notes:
-1. If it doesn't work the first time, close it and run it to install all the datapacks.
+# Notes:
+If it doesn't work the first time, close and reopen it — this will allow it to install all required datapacks.
 
-Uninstall cheat in the world:
-1. Go to your world folder and delete all folders related to "zDark"
+To uninstall the cheat from a world, go to your world folder and delete any folders related to zDark.
 
-Have a great cheat
+Enjoy your enhanced Minecraft experience!
