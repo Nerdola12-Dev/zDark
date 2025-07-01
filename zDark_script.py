@@ -1,4 +1,4 @@
-from apis import MCData
+from API import MCData
 
 scoreboards = MCData.scoreboards
 Type = MCData.Type
