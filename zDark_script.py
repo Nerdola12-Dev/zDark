@@ -28,3 +28,5 @@ execute(
     "gamemode survival @s",
     Type.loop()
 )
+
+MCData.extra_inject()
