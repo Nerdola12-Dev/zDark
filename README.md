@@ -1,7 +1,7 @@
-# Welcome to Dark Hub
+# Welcome to zDark Hub
 The Ultimate Single Player Cheat
 
-Dark Hub is a single-player cheat tool that uses the MCData (Minecraft Datapack) API in combination with the MCExecutor script runner.
+zDark Hub is a single-player cheat tool that uses the MCData (Minecraft Datapack) API in combination with the MCExecutor script runner.
 
 # How to Use:
 To run it, simply use the following script:
