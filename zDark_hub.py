@@ -1,5 +1,5 @@
 import tkinter as tk
-from apis import MCData
+from API import MCData
 
 # Inicializa MCData
 MCData.clear()
